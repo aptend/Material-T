@@ -47,21 +47,6 @@ body a:hover {
     }
 }
 
-.post-content img {
-    max-width: 100%;
-}
-
-.post-content h1,h2,h3,h4,h5,h6 {
-    font-weight: 600;
-    padding-top: 50px;
-    margin-top: -50px;
-}
-
-.post-content h1::before,h2::before,h3::before,h4::before,h5::before,h6::before {
-    content: "# ";
-    color: #0e5796;
-}
-
 .comments {
     width: 60%;
     margin: 0 auto;
