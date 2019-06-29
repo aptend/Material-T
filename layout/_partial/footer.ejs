@@ -6,24 +6,33 @@
   </div>
 </footer>
 
-  <!-- SCRIPTS -->
-  <%- js("https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/js/jquery-3.3.1.min.js") %>
-  <%- js("https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/js/popper.min.js") %>
-  <%- js("https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/js/bootstrap.min.js") %>
-  <%- js("https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/js/mdb.min.js") %>
-  <%- js("js/main.js") %>
-  <% if(is_post()){ %>
-    <% if(theme.post.toc.enable){ %>
-      <%- js("https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js") %>
-    <% } %>
-    <%- js("/js/post.js") %>
-    <% if(theme.post.highlight.enable){ %>
-      <%- js("js/plugins/prettify.js") %>
-      <script>
-          $(document).ready(function(){
-              $('pre').addClass('prettyprint');
-              prettyPrint();
-          })
-      </script>
-    <% } %>
-  <% } %>
+<!-- SCRIPTS -->
+<%- js("https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/js/jquery-3.3.1.min.js") %>
+<%- js("https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/js/popper.min.js") %>
+<%- js("https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/js/bootstrap.min.js") %>
+<%- js("https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/js/mdb.min.js") %>
+<%- js("js/main.js") %>
+<% if(is_post()){ %>
+
+<% if(theme.post.toc.enable){ %>
+<%- js("https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js") %>
+<% } %>
+<%- js("/js/post.js") %>
+<% if(theme.post.highlight.enable){ %>
+<%- js("js/plugins/prettify.js") %>
+<script>
+  $(document).ready(function () {
+    $('pre').addClass('prettyprint');
+    prettyPrint();
+  })
+</script>
+<% } %>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script>
+<% } %>
